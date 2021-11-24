@@ -11,8 +11,10 @@ from google.cloud import texttospeech
 prefix = os.getenv('DISCORD_BOT_PREFIX', default='🦑')
 tts_lang = os.getenv('DISCORD_BOT_LANG', default='ja-JP')
 tts_voice = os.getenv('DISCORD_BOT_VOICE', default='ja-JP-Wavenet-B')
-tts_speed = os.getenv('DISCORD_BOT_SPEED', default=1.0)
-tts_pitch = os.getenv('DISCORD_BOT_PITCH', default=0)
+tts_speed = os.getenv('DISCORD_BOT_SPEED', default='1.0')
+float_tts_speed = float(tts_speed)
+tts_pitch = os.getenv('DISCORD_BOT_PITCH', default='0')
+float_tts_pitch = float(tts_pitch)
 token = os.environ['DISCORD_BOT_TOKEN']
 client = commands.Bot(command_prefix=prefix)
 with open('emoji_ja.json', encoding='utf-8') as file:
@@ -204,7 +206,7 @@ def tts(message):
         language_code=tts_lang, name=tts_voice
     )
     audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=tts_speed, pitch=tts_pitch
+        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=float_tts_speed, pitch=float_tts_pitch
     )
     response = tts_client.synthesize_speech(
         input=synthesis_input, voice=voice, audio_config=audio_config
