@@ -27,11 +27,11 @@
       "required": false
     },
     "DISCORD_BOT_SPEED": {
-      "description": "読み上げ速度。空白で1.0，大きいほど速い",
+      "description": "読み上げ速度。空白で1.0，0.25-4.00大きいほど速い",
       "required": false
     },
     "DISCORD_BOT_PITCH": {
-      "description": "声の高さ。空白で1.0，大きいほど高い",
+      "description": "声の高さ。空白で0，-20-+20大きいほど高い",
       "required": false
     },
     "GOOGLE_TYPE": "",
