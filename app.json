@@ -26,6 +26,14 @@
       "description": "ボットの声の種類を設定します。空欄にすると「ja-JP-Wavenet-B」に設定されます。（https://cloud.google.com/text-to-speech/docs/voices）",
       "required": false
     },
+    "DISCORD_BOT_SPEED": {
+      "description": "読み上げ速度。空白で1.0，大きいほど速い",
+      "required": false
+    },
+    "DISCORD_BOT_PITCH": {
+      "description": "声の高さ。空白で1.0，大きいほど高い",
+      "required": false
+    },
     "GOOGLE_TYPE": "",
     "GOOGLE_PROJECT_ID": "",
     "GOOGLE_PRIVATE_KEY_ID": "",
