@@ -202,7 +202,7 @@ def tts(message):
         language_code=tts_lang, name=tts_voice
     )
     audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=1.2
+        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=1.0, pitch=-1.60
     )
     response = tts_client.synthesize_speech(
         input=synthesis_input, voice=voice, audio_config=audio_config
